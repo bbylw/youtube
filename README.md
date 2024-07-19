@@ -27,6 +27,9 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Acknowledgments
 Thanks to OpenAI for generating the HTML code.
 Inspired by YouTube's design.
+
+
+
 完全由AI生成的YouTube导航页
 这是一个完全由AI生成的模仿YouTube的导航页，使用纯HTML创建的静态网页。可以轻松部署在GitHub Pages或者通过GitHub部署到Cloudflare Pages上。通过dynv6还可以绑定免费的永久域名。
 
