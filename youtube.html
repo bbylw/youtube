@@ -12,7 +12,7 @@
         --accent-color: #ff0000;
         --card-bg-color: #272727;
       }
-
+      
       html {
         font-size: 16px;
         font-family: "微软雅黑", Arial, sans-serif;
@@ -76,8 +76,7 @@
         font-weight: bold;
         padding: 0.6rem 1.2rem;
         border-radius: 0.8rem;
-        transition: background-color 0.3s, color 0.3s, outline 0.1s ease,
-          border-bottom 0.3s ease; /* 添加 outline 过渡 */
+        transition: background-color 0.3s, color 0.3s, outline 0.1s ease, border-bottom 0.3s ease; /* 添加 outline 过渡 */
         display: inline-block; /* 确保 focus 样式能正确应用 */
         outline: 2px solid transparent; /* 预留 outline 空间 */
         outline-offset: 2px;
@@ -88,17 +87,15 @@
         color: #fff;
       }
 
-      nav a:hover {
-        /* 添加红色底部线条 */
+      nav a:hover { /* 添加红色底部线条 */
         border-bottom: 3px solid var(--accent-color);
+        
       }
-      nav a:focus,
-      nav a:focus-visible {
-        outline: 2px solid var(--accent-color);
+      nav a:focus, nav a:focus-visible {
+          outline: 2px solid var(--accent-color);
       }
 
-      nav ul,
-      footer nav {
+      nav ul,footer nav{
         background-image: linear-gradient(#1a1a1a, #222222);
       }
       main {
@@ -107,7 +104,7 @@
         padding: 1rem;
       }
 
-      .category-title {
+      .category-title { 
         font-size: 1.6rem;
         font-weight: bold;
         color: var(--primary-text-color);
@@ -121,11 +118,12 @@
         background-color: #222;
       }
 
-      #links {
+      #links{
         max-width: 1200px;
         margin: 0 auto;
         padding: 1rem;
       }
+
 
       .link-grid {
         display: grid;
@@ -134,7 +132,7 @@
         margin-bottom: 2rem;
       }
 
-      .link-card {
+      .link-card {        
         background-color: var(--card-bg-color);
         border-radius: 0.8rem;
         padding: 1rem;
@@ -152,7 +150,7 @@
         overflow: hidden;
       }
 
-      .link-card a {
+      .link-card a { 
         position: absolute;
         top: 0;
         left: 0;
@@ -177,24 +175,25 @@
         outline-offset: -1px; /* 轮廓向内偏移 */
       }
 
-      .link-card:hover {
+      .link-card:hover {   
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 增加悬停时的阴影 */
+        
       }
 
-      .link-card i {
+      .link-card i { 
         font-size: 1.8rem;
         margin-bottom: 0.7rem;
         color: var(--accent-color);
-
+        
         transition: transform 0.2s ease;
         position: relative;
-
+        
+        
         z-index: 11; /* 低于 a 标签 */
       }
 
-      .link-card:hover i {
-        /*修改图标大小*/
+      .link-card:hover i { /*修改图标大小*/
         transform: scale(1.1);
       }
 
@@ -228,7 +227,7 @@
         font-size: 1rem;
       }
 
-      footer nav {
+      footer nav { 
         margin-top: 0.6rem;
         position: static; /* 覆盖 sticky nav 的属性 */
       }
@@ -238,8 +237,7 @@
         font-size: 0.75rem;
       }
       /* 保持 footer a 的 focus 样式 */
-      footer nav a:focus,
-      footer nav a:focus-visible {
+      footer nav a:focus,footer nav a:focus-visible {
         outline: 1px dotted var(--primary-color); /* 可以用不同的样式 */
         outline-offset: 1px;
         background-color: transparent; /* 不改变背景色 */
@@ -256,12 +254,12 @@
           padding: 1rem;
           max-width: 95%;
         }
+        .link-grid {
+          grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+          gap: 1rem;
+        }
       }
-      .link-grid {
-        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-        gap: 1rem;
-      }
-      /* Removed empty rule set */
+
 
       @media (max-width: 768px) {
         html {
@@ -281,11 +279,11 @@
           padding: 0.4rem 0.7rem;
           font-size: 0.95rem;
         }
-        .category-title {
+        .category-title {          
           font-size: 1.4rem;
           margin: 1.8rem 0 1rem;
           scroll-margin-top: 60px; /* 调整滚动边距 */
-        }
+        }        
         .link-card {
           padding: 1rem 0.6rem;
           min-height: 80px;
@@ -297,8 +295,11 @@
         .link-card h3 {
           font-size: 0.8rem;
           height: 2.4em;
+          
+          
         }
       }
+    
 
       @media (max-width: 480px) {
         html {
@@ -374,7 +375,7 @@
         }
         .category-title {
           scroll-margin-top: 50px; /* 调整滚动边距 */
-        }
+        }      
       }
     </style>
     <!-- Font Awesome CDN -->
@@ -1908,767 +1909,205 @@
         </div>
       </section>
     </main>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+       try {
         const linksData = {
-          "ai-search": [
-            {
-              href: "https://www.google.com",
-              icon: "fa-brands fa-google",
-              title: "Google",
-            },
-            {
-              href: "https://www.bing.com",
-              icon: "fa-brands fa-microsoft",
-              title: "Bing",
-            },
-            {
-              href: "https://openrouter.ai/",
-              icon: "fa-brands fa-openid",
-              title: "openrouter",
-            },
-            {
-              href: "https://websim.ai/",
-              icon: "fa-solid fa-magnifying-glass",
-              title: "websim",
-            },
-            {
-              href: "https://chatgpt.com/",
-              icon: "fa-solid fa-robot",
-              title: "chatgpt",
-            },
-            {
-              href: "https://www.doubao.com/chat/",
-              icon: "fa-solid fa-paw",
-              title: "豆包",
-            },
-            {
-              href: "https://chat.qwen.ai/",
-              icon: "fa-brands fa-rocketchat",
-              title: "通义千问",
-            },
-            {
-              href: "https://kimi.moonshot.cn/",
-              icon: "fa-regular fa-moon",
-              title: "kimi",
-            },
-            {
-              href: "https://yiyan.baidu.com/",
-              icon: "fa-solid fa-brain",
-              title: "文心一言",
-            },
-            {
-              href: "https://yuanbao.tencent.com/",
-              icon: "fa-solid fa-coins",
-              title: "腾讯元宝",
-            },
-            {
-              href: "https://aistudio.google.com/",
-              icon: "fa-solid fa-flask",
-              title: "Google AI Studio",
-            },
-            {
-              href: "https://gemini.google.com/",
-              icon: "fa-solid fa-gem",
-              title: "Gemini",
-            },
-            {
-              href: "https://build.nvidia.com/",
-              icon: "fa-solid fa-microchip",
-              title: "NVIDIA Build",
-            },
-            {
-              href: "https://claude.ai/",
-              icon: "fa-solid fa-feather-pointed",
-              title: "Claude",
-            },
-            {
-              href: "https://chandler.bet/",
-              icon: "fa-solid fa-robot",
-              title: "ChandlerAi",
-            },
-            {
-              href: "https://mistral.ai/",
-              icon: "fa-solid fa-wind",
-              title: "Mistral AI",
-            },
-            {
-              href: "https://groq.com/",
-              icon: "fa-solid fa-gauge-high",
-              title: "Groq",
-            },
-            {
-              href: "https://www.medscape.com/",
-              icon: "fa-solid fa-stethoscope",
-              title: "Medscape",
-            },
-            {
-              href: "https://heck.ai/",
-              icon: "fa-brands fa-rocketchat",
-              title: "heck.ai",
-            },
-            {
-              href: "https://www.wenxiaobai.com/",
-              icon: "fa-solid fa-mask",
-              title: "问小白",
-            },
-            {
-              href: "https://app.leonardo.ai/",
-              icon: "fa-solid fa-palette",
-              title: "Leonardo.Ai 绘图",
-            },
-            {
-              href: "https://huggingface.co/",
-              icon: "fa-solid fa-face-smile-beam",
-              title: "Hugging Face",
-            },
-            {
-              href: "https://lmarena.ai/",
-              icon: "fa-solid fa-trophy",
-              title: "LMSys Chatbot Arena",
-            },
-            {
-              href: "https://kelaode.ai/",
-              icon: "fa-solid fa-c",
-              title: "Kelaode AI",
-            },
-            {
-              href: "https://x.ai/",
-              icon: "fa-brands fa-x-twitter",
-              title: "x.ai (Grok)",
-            },
-            {
-              href: "https://ascvdpce.186404.xyz/",
-              icon: "fa-solid fa-heart-pulse",
-              title: "ASCVD PCE 计算",
-            },
-            {
-              href: "https://www.deepseek.com/",
-              icon: "fa-solid fa-search-location",
-              title: "DeepSeek",
-            },
-            {
-              href: "https://ai.dangbei.com/",
-              icon: "fa-solid fa-tv",
-              title: "当贝AI",
-            },
-            {
-              href: "https://www.beago.ai/",
-              icon: "fa-solid fa-dog",
-              title: "beago.ai",
-            },
-            {
-              href: "https://sigmabrowser.com/chat",
-              icon: "fa-brands fa-edge-legacy",
-              title: "Sigma Chat",
-            },
-          ],
-          social: [
-            {
-              href: "https://www.facebook.com",
-              icon: "fa-brands fa-facebook",
-              title: "Facebook",
-            },
-            {
-              href: "https://twitter.com",
-              icon: "fa-brands fa-twitter",
-              title: "Twitter / X",
-            },
-            {
-              href: "https://twitterxz.com/",
-              icon: "fa-solid fa-download",
-              title: "推特视频下载",
-            },
-            {
-              href: "https://www.instagram.com",
-              icon: "fa-brands fa-instagram",
-              title: "Instagram",
-            },
-            {
-              href: "https://render.com/",
-              icon: "fa-solid fa-cloud-arrow-up",
-              title: "Render",
-            },
-            {
-              href: "https://deno.com/deploy",
-              icon: "fa-brands fa-node-js",
-              title: "Deno Deploy",
-            },
-            {
-              href: "https://railway.app/",
-              icon: "fa-solid fa-train-subway",
-              title: "Railway",
-            },
-            {
-              href: "https://vercel.com/",
-              icon: "fa-solid fa-v",
-              title: "Vercel",
-            },
-            {
-              href: "https://www.netlify.com/",
-              icon: "fa-solid fa-n",
-              title: "Netlify",
-            },
-            {
-              href: "https://www.tiktok.com",
-              icon: "fa-brands fa-tiktok",
-              title: "TikTok",
-            },
-            {
-              href: "https://goingbus.com/",
-              icon: "fa-solid fa-ticket-alt",
-              title: "GoingBus 合租",
-            },
-            {
-              href: "https://www.reddit.com",
-              icon: "fa-brands fa-reddit-alien",
-              title: "Reddit",
-            },
-            {
-              href: "https://www.downloadyoutubesubtitles.com/",
-              icon: "fa-solid fa-closed-captioning",
-              title: "油管字幕下载",
-            },
-            {
-              href: "https://github.com/",
-              icon: "fa-brands fa-github",
-              title: "GitHub",
-            },
-            {
-              href: "https://www.y2mate.com/",
-              icon: "fa-solid fa-download",
-              title: "油管视频下载 (Y2Mate)",
-            },
-            {
-              href: "https://youtube.iiilab.com/",
-              icon: "fa-solid fa-download",
-              title: "视频下载 (iiilab)",
-            },
-            {
-              href: "https://suno.com/",
-              icon: "fa-solid fa-music",
-              title: "Suno AI 音乐",
-            },
-            {
-              href: "https://mv.186404.xyz/",
-              icon: "fa-solid fa-film",
-              title: "电影导航",
-            },
-          ],
-          tools: [
-            {
-              href: "https://translate.google.com",
-              icon: "fa-solid fa-language",
-              title: "Google 翻译",
-            },
-            {
-              href: "https://d.186404.xyz/",
-              icon: "fa-solid fa-link",
-              title: "短链服务",
-            },
-            {
-              href: "https://dynv6.com/",
-              icon: "fa-solid fa-network-wired",
-              title: "DynV6 (DDNS)",
-            },
-            {
-              href: "https://fast.com/",
-              icon: "fa-solid fa-gauge-high",
-              title: "Fast.com 网速测试",
-            },
-            {
-              href: "https://www.cloudns.net/",
-              icon: "fa-solid fa-cloud",
-              title: "ClouDNS",
-            },
-            {
-              href: "https://www.cloudflare.com/zh-cn/",
-              icon: "fa-solid fa-shield-halved",
-              title: "Cloudflare",
-            },
-            {
-              href: "https://ygpy.net/",
-              icon: "fa-solid fa-user-group",
-              title: "一个朋友 (导航)",
-            },
-            {
-              href: "https://notebooklm.google/",
-              icon: "fa-solid fa-book-open-reader",
-              title: "NotebookLM (Google)",
-            },
-            {
-              href: "https://temp-mail.org/zh/",
-              icon: "fa-solid fa-envelope-open-text",
-              title: "临时邮箱 (TempMail)",
-            },
-            {
-              href: "https://www.ahhhhfs.com/",
-              icon: "fa-solid fa-blog",
-              title: "A姐分享",
-            },
-            {
-              href: "https://ip.sb/",
-              icon: "fa-solid fa-location-dot",
-              title: "IP 查询 (ip.sb)",
-            },
-            {
-              href: "https://dns.he.net/",
-              icon: "fa-solid fa-network-wired",
-              title: "HE.net DNS",
-            },
-            {
-              href: "https://www.site.ac/",
-              icon: "fa-solid fa-right-left",
-              title: "Site.ac 域名转发",
-            },
-            {
-              href: "https://z-lib.is/",
-              icon: "fa-solid fa-book-bookmark",
-              title: "Z-Library",
-            },
-            {
-              href: "https://domain.digitalplat.org/",
-              icon: "fa-solid fa-globe",
-              title: "us.kg 免费域名",
-            },
-            {
-              href: "https://www.spaceship.com/zh/",
-              icon: "fa-solid fa-rocket",
-              title: "Spaceship 域名",
-            },
-            {
-              href: "https://cursor.sh/",
-              icon: "fa-solid fa-i-cursor",
-              title: "Cursor IDE",
-            },
-            {
-              href: "https://fontawesome.com/",
-              icon: "fa-solid fa-icons",
-              title: "Font Awesome 图标",
-            },
-            {
-              href: "https://scamalytics.com/ip",
-              icon: "fa-solid fa-user-secret",
-              title: "IP 清洁度查询",
-            },
-            {
-              href: "https://test-ipv6.com/",
-              icon: "fa-solid fa-network-wired",
-              title: "IPv6 测试",
-            },
-            {
-              href: "https://ipinfo.io",
-              icon: "fa-solid fa-map-location-dot",
-              title: "IP Info",
-            },
-            {
-              href: "https://www.lumiproxy.com/zh-hans/online-proxy/proxysite/",
-              icon: "fa-solid fa-globe",
-              title: "LumiProxy 网页代理",
-            },
-            {
-              href: "https://ipcheck.ing/",
-              icon: "fa-solid fa-check-double",
-              title: "IP Check",
-            },
-            {
-              href: "https://cron-job.org/",
-              icon: "fa-regular fa-clock",
-              title: "Cron-Job 定时任务",
-            },
-            {
-              href: "https://uptimerobot.com/",
-              icon: "fa-solid fa-heart-pulse",
-              title: "UptimeRobot 监控",
-            },
-            {
-              href: "https://forwardemail.net/",
-              icon: "fa-solid fa-share",
-              title: "Forward Email 转发",
-            },
-            {
-              href: "https://improvmx.com/",
-              icon: "fa-solid fa-envelope-circle-check",
-              title: "ImprovMX 邮件转发",
-            },
-            {
-              href: "https://ghproxy.com/",
-              icon: "fa-brands fa-github-alt",
-              title: "GitHub 文件加速",
-            },
-            {
-              href: "https://hostry.com/solutions/free-dns/",
-              icon: "fa-solid fa-database",
-              title: "Hostry DNS",
-            },
-            {
-              href: "https://www.sitelutions.com/dns-service",
-              icon: "fa-solid fa-sitemap",
-              title: "Sitelutions DNS",
-            },
-            {
-              href: "https://www.changeip.com/dns/",
-              icon: "fa-solid fa-satellite-dish",
-              title: "ChangeIP DNS",
-            },
-            {
-              href: "https://dnsexit.com/dns/free-dns/",
-              icon: "fa-solid fa-right-from-bracket",
-              title: "DNSExit DNS",
-            },
-            {
-              href: "https://www.nslookup.io/",
-              icon: "fa-solid fa-magnifying-glass-location",
-              title: "nslookup.io",
-            },
-            {
-              href: "https://ping.pe",
-              icon: "fa-solid fa-network-wired",
-              title: "Ping.pe",
-            },
-            {
-              href: "https://freedns.afraid.org/",
-              icon: "fa-solid fa-server",
-              title: "Afraid.org FreeDNS",
-            },
-            {
-              href: "https://tools.pdf24.org/zh/",
-              icon: "fa-solid fa-file-pdf",
-              title: "PDF24 Tools",
-            },
-            {
-              href: "http://free-proxy.cz/en/",
-              icon: "fa-solid fa-list-ul",
-              title: "Free Proxy List",
-            },
-            {
-              href: "https://www.croxyproxy.com/",
-              icon: "fa-solid fa-shield-alt",
-              title: "CroxyProxy",
-            },
-            {
-              href: "https://markdown.com.cn/editor/",
-              icon: "fa-brands fa-markdown",
-              title: "Markdown 编辑器",
-            },
-            {
-              href: "https://www.proxysite.com/",
-              icon: "fa-solid fa-globe",
-              title: "ProxySite.com",
-            },
-            {
-              href: "https://www.serv00.com/",
-              icon: "fa-solid fa-server",
-              title: "Serv00 免费托管",
-            },
-            {
-              href: "https://github.com/Molunerfinn/PicGo",
-              icon: "fa-solid fa-cloud-arrow-up",
-              title: "PicGo 图床工具",
-            },
-            {
-              href: "https://sm.ms/",
-              icon: "fa-solid fa-image",
-              title: "SM.MS 图床",
-            },
-            {
-              href: "https://freeimage.host/",
-              icon: "fa-solid fa-photo-film",
-              title: "FreeImage.Host 图床",
-            },
-            {
-              href: "https://cobalt.tools/",
-              icon: "fa-solid fa-download",
-              title: "Cobalt 媒体下载",
-            },
-            {
-              href: "https://codeium.com/",
-              icon: "fa-solid fa-code",
-              title: "Codeium AI 编程助手",
-            },
-            {
-              href: "https://tinywow.com/",
-              icon: "fa-solid fa-toolbox",
-              title: "TinyWow 在线工具",
-            },
-            {
-              href: "https://12ft.io/",
-              icon: "fa-solid fa-ladder-water",
-              title: "12ft Ladder (Paywall)",
-            },
-            {
-              href: "https://removepaywall.com/",
-              icon: "fa-solid fa-unlock-alt",
-              title: "Remove Paywall",
-            },
-            {
-              href: "https://fmhy.net/tools-list",
-              icon: "fa-solid fa-folder-tree",
-              title: "FMHY (资源导航)",
-            },
-            {
-              href: "https://www.remove.bg/zh",
-              icon: "fa-solid fa-wand-magic-sparkles",
-              title: "Remove.bg 抠图",
-            },
-            {
-              href: "https://picwish.com/zh/remove-background",
-              icon: "fa-regular fa-image",
-              title: "PicWish 抠图",
-            },
-            {
-              href: "https://zenvideo.qq.com/",
-              icon: "fa-solid fa-video",
-              title: "腾讯智影",
-            },
-            {
-              href: "https://www.duckdns.org/",
-              icon: "fa-solid fa-globe",
-              title: "Duck DNS (DDNS)",
-            },
-            {
-              href: "https://pixabay.com/zh/",
-              icon: "fa-solid fa-images",
-              title: "Pixabay 免费图库",
-            },
-            {
-              href: "https://infinityfree.net/",
-              icon: "fa-solid fa-infinity",
-              title: "InfinityFree 免费托管",
-            },
-            {
-              href: "https://anyvoice.app/",
-              icon: "fa-solid fa-microphone-lines",
-              title: "AnyVoice AI TTS",
-            },
-            {
-              href: "https://fish.audio/",
-              icon: "fa-solid fa-fish-fins",
-              title: "Fish Audio (TTS)",
-            },
-            {
-              href: "https://noiz.ai/",
-              icon: "fa-solid fa-volume-off",
-              title: "Noiz.ai 降噪",
-            },
-            {
-              href: "https://hailuoai.com/",
-              icon: "fa-solid fa-headphones",
-              title: "海螺 AI",
-            },
-            {
-              href: "https://desec.io/",
-              icon: "fa-solid fa-anchor",
-              title: "deSEC DNS",
-            },
-            {
-              href: "https://lovable.dev/",
-              icon: "fa-solid fa-wand-magic",
-              title: "Lovable AI 网站生成",
-            },
-            {
-              href: "https://www.netlib.re/dns/",
-              icon: "fa-solid fa-network-wired",
-              title: "Netlib DNS",
-            },
-            {
-              href: "https://nic.eu.org/",
-              icon: "fa-solid fa-earth-europe",
-              title: "EU.org 免费域名",
-            },
-            {
-              href: "https://x10hosting.com/free-hosting",
-              icon: "fa-solid fa-server",
-              title: "x10hosting 免费托管",
-            },
-            {
-              href: "https://www.nodeloc.com/",
-              icon: "fa-solid fa-comments",
-              title: "NodeLoc 社区",
-            },
-            {
-              href: "https://copy.site/",
-              icon: "fa-solid fa-copy",
-              title: "Copy.Site 复制网站",
-            },
-            {
-              href: "https://www.subeasy.ai/zh-CN",
-              icon: "fa-solid fa-closed-captioning",
-              title: "SubEasy AI 字幕",
-            },
-            {
-              href: "https://www.stormkit.io/",
-              icon: "fa-solid fa-cloud-bolt",
-              title: "Stormkit 部署",
-            },
-          ],
-          "tech-news": [
-            {
-              href: "https://techcrunch.com",
-              icon: "fa-solid fa-newspaper",
-              title: "TechCrunch",
-            },
-            {
-              href: "https://www.wired.com",
-              icon: "fa-solid fa-bolt",
-              title: "Wired",
-            },
-            {
-              href: "https://www.theverge.com",
-              icon: "fa-solid fa-laptop",
-              title: "The Verge",
-            },
-            {
-              href: "https://arstechnica.com",
-              icon: "fa-solid fa-rocket",
-              title: "Ars Technica",
-            },
-            {
-              href: "https://www.engadget.com",
-              icon: "fa-solid fa-mobile-screen-button",
-              title: "Engadget",
-            },
-            {
-              href: "https://scitechdaily.com/",
-              icon: "fa-solid fa-flask-vial",
-              title: "SciTechDaily",
-            },
-            {
-              href: "https://www.techradar.com/news",
-              icon: "fa-solid fa-satellite-dish",
-              title: "TechRadar",
-            },
-            {
-              href: "https://b.186404.xyz/",
-              icon: "fa-solid fa-blog",
-              title: "科技博客",
-            },
-            {
-              href: "https://www.cnbeta.com.tw/",
-              icon: "fa-solid fa-circle-info",
-              title: "cnBeta",
-            },
-          ],
-          "cloud-storage": [
-            {
-              href: "https://www.dropbox.com",
-              icon: "fa-brands fa-dropbox",
-              title: "Dropbox",
-            },
-            {
-              href: "https://drive.google.com",
-              icon: "fa-brands fa-google-drive",
-              title: "Google Drive",
-            },
-            {
-              href: "https://onedrive.live.com",
-              icon: "fa-brands fa-microsoft",
-              title: "OneDrive",
-            },
-            {
-              href: "https://www.box.com/zh-cn/",
-              icon: "fa-solid fa-box-archive",
-              title: "Box",
-            },
-            {
-              href: "https://www.mediafire.com",
-              icon: "fa-solid fa-fire",
-              title: "MediaFire",
-            },
-            {
-              href: "https://mega.nz",
-              icon: "fa-solid fa-cloud-arrow-up",
-              title: "MEGA",
-            },
-            {
-              href: "https://mypikpak.com/",
-              icon: "fa-solid fa-bolt-lightning",
-              title: "PikPak",
-            },
-          ],
-          email: [
-            {
-              href: "https://mail.google.com",
-              icon: "fa-solid fa-envelope",
-              title: "Gmail",
-            },
-            {
-              href: "https://outlook.live.com",
-              icon: "fa-brands fa-windows",
-              title: "Outlook",
-            },
-            {
-              href: "https://mail.cock.li/login/",
-              icon: "fa-solid fa-envelope-open",
-              title: "cock.li 邮箱",
-            },
-            {
-              href: "https://disroot.org/zh/services/email",
-              icon: "fa-solid fa-seedling",
-              title: "Disroot 邮箱",
-            },
-            {
-              href: "https://proton.me/mail",
-              icon: "fa-solid fa-user-shield",
-              title: "Proton Mail",
-            },
-            {
-              href: "https://mail.qq.com",
-              icon: "fa-brands fa-qq",
-              title: "QQ邮箱",
-            },
-            {
-              href: "https://librem.one/",
-              icon: "fa-solid fa-lock",
-              title: "Librem One Mail",
-            },
-            {
-              href: "https://www.linshigmail.com/",
-              icon: "fa-solid fa-hourglass-half",
-              title: "临时 Gmail",
-            },
-          ],
+            "ai-search": [
+                { href: "https://www.google.com", icon: "fa-brands fa-google", title: "Google" },
+                { href: "https://www.bing.com", icon: "fa-brands fa-microsoft", title: "Bing" },
+                { href: "https://openrouter.ai/", icon: "fa-brands fa-openid", title: "openrouter" },
+                { href: "https://websim.ai/", icon: "fa-solid fa-magnifying-glass", title: "websim" },
+                { href: "https://chatgpt.com/", icon: "fa-solid fa-robot", title: "chatgpt" },
+                { href: "https://www.doubao.com/chat/", icon: "fa-solid fa-paw", title: "豆包" },
+                { href: "https://chat.qwen.ai/", icon: "fa-brands fa-rocketchat", title: "通义千问" },
+                { href: "https://kimi.moonshot.cn/", icon: "fa-regular fa-moon", title: "kimi" },
+                { href: "https://yiyan.baidu.com/", icon: "fa-solid fa-brain", title: "文心一言" },
+                { href: "https://yuanbao.tencent.com/", icon: "fa-solid fa-coins", title: "腾讯元宝" },
+                { href: "https://aistudio.google.com/", icon: "fa-solid fa-flask", title: "Google AI Studio" },
+                { href: "https://gemini.google.com/", icon: "fa-solid fa-gem", title: "Gemini" },
+                { href: "https://build.nvidia.com/", icon: "fa-solid fa-microchip", title: "NVIDIA Build" },
+                { href: "https://claude.ai/", icon: "fa-solid fa-feather-pointed", title: "Claude" },
+                { href: "https://chandler.bet/", icon: "fa-solid fa-robot", title: "ChandlerAi" },
+                { href: "https://mistral.ai/", icon: "fa-solid fa-wind", title: "Mistral AI" },
+                { href: "https://groq.com/", icon: "fa-solid fa-gauge-high", title: "Groq" },
+                { href: "https://www.medscape.com/", icon: "fa-solid fa-stethoscope", title: "Medscape" },
+                { href: "https://heck.ai/", icon: "fa-brands fa-rocketchat", title: "heck.ai" },
+                { href: "https://www.wenxiaobai.com/", icon: "fa-solid fa-mask", title: "问小白" },
+                { href: "https://app.leonardo.ai/", icon: "fa-solid fa-palette", title: "Leonardo.Ai 绘图" },
+                { href: "https://huggingface.co/", icon: "fa-solid fa-face-smile-beam", title: "Hugging Face" },
+                { href: "https://lmarena.ai/", icon: "fa-solid fa-trophy", title: "LMSys Chatbot Arena" },
+                { href: "https://kelaode.ai/", icon: "fa-solid fa-c", title: "Kelaode AI" },
+                { href: "https://x.ai/", icon: "fa-brands fa-x-twitter", title: "x.ai (Grok)" },
+                { href: "https://ascvdpce.186404.xyz/", icon: "fa-solid fa-heart-pulse", title: "ASCVD PCE 计算" },
+                { href: "https://www.deepseek.com/", icon: "fa-solid fa-search-location", title: "DeepSeek" },
+                { href: "https://ai.dangbei.com/", icon: "fa-solid fa-tv", title: "当贝AI" },
+                { href: "https://www.beago.ai/", icon: "fa-solid fa-dog", title: "beago.ai" },
+                { href: "https://sigmabrowser.com/chat", icon: "fa-brands fa-edge-legacy", title: "Sigma Chat" },
+            ],
+            "social": [
+                { href: "https://www.facebook.com", icon: "fa-brands fa-facebook", title: "Facebook" },
+                { href: "https://twitter.com", icon: "fa-brands fa-twitter", title: "Twitter / X" },
+                { href: "https://twitterxz.com/", icon: "fa-solid fa-download", title: "推特视频下载" },
+                { href: "https://www.instagram.com", icon: "fa-brands fa-instagram", title: "Instagram" },
+                { href: "https://render.com/", icon: "fa-solid fa-cloud-arrow-up", title: "Render" },
+                { href: "https://deno.com/deploy", icon: "fa-brands fa-node-js", title: "Deno Deploy" },
+                { href: "https://railway.app/", icon: "fa-solid fa-train-subway", title: "Railway" },
+                { href: "https://vercel.com/", icon: "fa-solid fa-v", title: "Vercel" },
+                { href: "https://www.netlify.com/", icon: "fa-solid fa-n", title: "Netlify" },
+                { href: "https://www.tiktok.com", icon: "fa-brands fa-tiktok", title: "TikTok" },
+                { href: "https://goingbus.com/", icon: "fa-solid fa-ticket-alt", title: "GoingBus 合租" },
+                { href: "https://www.reddit.com", icon: "fa-brands fa-reddit-alien", title: "Reddit" },
+                { href: "https://www.downloadyoutubesubtitles.com/", icon: "fa-solid fa-closed-captioning", title: "油管字幕下载" },
+                { href: "https://github.com/", icon: "fa-brands fa-github", title: "GitHub" },
+                { href: "https://www.y2mate.com/", icon: "fa-solid fa-download", title: "油管视频下载 (Y2Mate)" },
+                { href: "https://youtube.iiilab.com/", icon: "fa-solid fa-download", title: "视频下载 (iiilab)" },
+                { href: "https://suno.com/", icon: "fa-solid fa-music", title: "Suno AI 音乐" },
+                { href: "https://mv.186404.xyz/", icon: "fa-solid fa-film", title: "电影导航" }
+            ],
+            "tools": [
+                { href: "https://translate.google.com", icon: "fa-solid fa-language", title: "Google 翻译" },
+                { href: "https://d.186404.xyz/", icon: "fa-solid fa-link", title: "短链服务" },
+                { href: "https://dynv6.com/", icon: "fa-solid fa-network-wired", title: "DynV6 (DDNS)" },
+                { href: "https://fast.com/", icon: "fa-solid fa-gauge-high", title: "Fast.com 网速测试" },
+                { href: "https://www.cloudns.net/", icon: "fa-solid fa-cloud", title: "ClouDNS" },
+                { href: "https://www.cloudflare.com/zh-cn/", icon: "fa-solid fa-shield-halved", title: "Cloudflare" },
+                { href: "https://ygpy.net/", icon: "fa-solid fa-user-group", title: "一个朋友 (导航)" },
+                { href: "https://notebooklm.google/", icon: "fa-solid fa-book-open-reader", title: "NotebookLM (Google)" },
+                { href: "https://temp-mail.org/zh/", icon: "fa-solid fa-envelope-open-text", title: "临时邮箱 (TempMail)" },
+                { href: "https://www.ahhhhfs.com/", icon: "fa-solid fa-blog", title: "A姐分享" },
+                { href: "https://ip.sb/", icon: "fa-solid fa-location-dot", title: "IP 查询 (ip.sb)" },
+                { href: "https://dns.he.net/", icon: "fa-solid fa-network-wired", title: "HE.net DNS" },
+                { href: "https://www.site.ac/", icon: "fa-solid fa-right-left", title: "Site.ac 域名转发" },
+                { href: "https://z-lib.is/", icon: "fa-solid fa-book-bookmark", title: "Z-Library" },
+                { href: "https://domain.digitalplat.org/", icon: "fa-solid fa-globe", title: "us.kg 免费域名" },
+                { href: "https://www.spaceship.com/zh/", icon: "fa-solid fa-rocket", title: "Spaceship 域名" },
+                { href: "https://cursor.sh/", icon: "fa-solid fa-i-cursor", title: "Cursor IDE" },
+                { href: "https://fontawesome.com/", icon: "fa-solid fa-icons", title: "Font Awesome 图标" },
+                { href: "https://scamalytics.com/ip", icon: "fa-solid fa-user-secret", title: "IP 清洁度查询" },
+                { href: "https://test-ipv6.com/", icon: "fa-solid fa-network-wired", title: "IPv6 测试" },
+                { href: "https://ipinfo.io", icon: "fa-solid fa-map-location-dot", title: "IP Info" },
+                { href: "https://www.lumiproxy.com/zh-hans/online-proxy/proxysite/", icon: "fa-solid fa-globe", title: "LumiProxy 网页代理" },
+                { href: "https://ipcheck.ing/", icon: "fa-solid fa-check-double", title: "IP Check" },
+                { href: "https://cron-job.org/", icon: "fa-regular fa-clock", title: "Cron-Job 定时任务" },
+                { href: "https://uptimerobot.com/", icon: "fa-solid fa-heart-pulse", title: "UptimeRobot 监控" },
+                { href: "https://forwardemail.net/", icon: "fa-solid fa-share", title: "Forward Email 转发" },
+                { href: "https://improvmx.com/", icon: "fa-solid fa-envelope-circle-check", title: "ImprovMX 邮件转发" },
+                { href: "https://ghproxy.com/", icon: "fa-brands fa-github-alt", title: "GitHub 文件加速" },
+                { href: "https://hostry.com/solutions/free-dns/", icon: "fa-solid fa-database", title: "Hostry DNS" },
+                { href: "https://www.sitelutions.com/dns-service", icon: "fa-solid fa-sitemap", title: "Sitelutions DNS" },
+                { href: "https://www.changeip.com/dns/", icon: "fa-solid fa-satellite-dish", title: "ChangeIP DNS" },
+                { href: "https://dnsexit.com/dns/free-dns/", icon: "fa-solid fa-right-from-bracket", title: "DNSExit DNS" },
+                { href: "https://www.nslookup.io/", icon: "fa-solid fa-magnifying-glass-location", title: "nslookup.io" },
+                { href: "https://ping.pe", icon: "fa-solid fa-network-wired", title: "Ping.pe" },
+                { href: "https://freedns.afraid.org/", icon: "fa-solid fa-server", title: "Afraid.org FreeDNS" },
+                { href: "https://tools.pdf24.org/zh/", icon: "fa-solid fa-file-pdf", title: "PDF24 Tools" },
+                { href: "http://free-proxy.cz/en/", icon: "fa-solid fa-list-ul", title: "Free Proxy List" },
+                { href: "https://www.croxyproxy.com/", icon: "fa-solid fa-shield-alt", title: "CroxyProxy" },
+                { href: "https://markdown.com.cn/editor/", icon: "fa-brands fa-markdown", title: "Markdown 编辑器" },
+                { href: "https://www.proxysite.com/", icon: "fa-solid fa-globe", title: "ProxySite.com" },
+                { href: "https://www.serv00.com/", icon: "fa-solid fa-server", title: "Serv00 免费托管" },
+                { href: "https://github.com/Molunerfinn/PicGo", icon: "fa-solid fa-cloud-arrow-up", title: "PicGo 图床工具" },
+                { href: "https://sm.ms/", icon: "fa-solid fa-image", title: "SM.MS 图床" },
+                { href: "https://freeimage.host/", icon: "fa-solid fa-photo-film", title: "FreeImage.Host 图床" },
+                { href: "https://cobalt.tools/", icon: "fa-solid fa-download", title: "Cobalt 媒体下载" },
+                { href: "https://codeium.com/", icon: "fa-solid fa-code", title: "Codeium AI 编程助手" },
+                { href: "https://tinywow.com/", icon: "fa-solid fa-toolbox", title: "TinyWow 在线工具" },
+                { href: "https://12ft.io/", icon: "fa-solid fa-ladder-water", title: "12ft Ladder (Paywall)" },
+                { href: "https://removepaywall.com/", icon: "fa-solid fa-unlock-alt", title: "Remove Paywall" },
+                { href: "https://fmhy.net/tools-list", icon: "fa-solid fa-folder-tree", title: "FMHY (资源导航)" },
+                { href: "https://www.remove.bg/zh", icon: "fa-solid fa-wand-magic-sparkles", title: "Remove.bg 抠图" },
+                { href: "https://picwish.com/zh/remove-background", icon: "fa-regular fa-image", title: "PicWish 抠图" },
+                { href: "https://zenvideo.qq.com/", icon: "fa-solid fa-video", title: "腾讯智影" },
+                { href: "https://www.duckdns.org/", icon: "fa-solid fa-globe", title: "Duck DNS (DDNS)" },
+                { href: "https://pixabay.com/zh/", icon: "fa-solid fa-images", title: "Pixabay 免费图库" },
+                 { href: "https://infinityfree.net/", icon: "fa-solid fa-infinity", title: "InfinityFree 免费托管" },
+                { href: "https://anyvoice.app/", icon: "fa-solid fa-microphone-lines", title: "AnyVoice AI TTS" },
+                { href: "https://fish.audio/", icon: "fa-solid fa-fish-fins", title: "Fish Audio (TTS)" },
+                { href: "https://noiz.ai/", icon: "fa-solid fa-volume-off", title: "Noiz.ai 降噪" },
+                { href: "https://hailuoai.com/", icon: "fa-solid fa-headphones", title: "海螺 AI" },
+                { href: "https://desec.io/", icon: "fa-solid fa-anchor", title: "deSEC DNS" },
+                { href: "https://lovable.dev/", icon: "fa-solid fa-wand-magic", title: "Lovable AI 网站生成" },
+                { href: "https://www.netlib.re/dns/", icon: "fa-solid fa-network-wired", title: "Netlib DNS" },                
+                { href: "https://nic.eu.org/", icon: "fa-solid fa-earth-europe", title: "EU.org 免费域名" },
+                { href: "https://x10hosting.com/free-hosting", icon: "fa-solid fa-server", title: "x10hosting 免费托管" },
+                { href: "https://www.nodeloc.com/", icon: "fa-solid fa-comments", title: "NodeLoc 社区" },
+                { href: "https://copy.site/", icon: "fa-solid fa-copy", title: "Copy.Site 复制网站" },
+                { href: "https://www.subeasy.ai/zh-CN", icon: "fa-solid fa-closed-captioning", title: "SubEasy AI 字幕" },
+                { href: "https://www.stormkit.io/", icon: "fa-solid fa-cloud-bolt", title: "Stormkit 部署" }
+            ],
+             "tech-news": [
+                { href: "https://techcrunch.com", icon: "fa-solid fa-newspaper", title: "TechCrunch" },
+                { href: "https://www.wired.com", icon: "fa-solid fa-bolt", title: "Wired" },
+                { href: "https://www.theverge.com", icon: "fa-solid fa-laptop", title: "The Verge" },
+                { href: "https://arstechnica.com", icon: "fa-solid fa-rocket", title: "Ars Technica" },
+                { href: "https://www.engadget.com", icon: "fa-solid fa-mobile-screen-button", title: "Engadget" },
+                { href: "https://scitechdaily.com/", icon: "fa-solid fa-flask-vial", title: "SciTechDaily" },
+                { href: "https://www.techradar.com/news", icon: "fa-solid fa-satellite-dish", title: "TechRadar" },
+                { href: "https://b.186404.xyz/", icon: "fa-solid fa-blog", title: "科技博客" },
+                { href: "https://www.cnbeta.com.tw/", icon: "fa-solid fa-circle-info", title: "cnBeta" }
+            ],
+             "cloud-storage": [
+                { href: "https://www.dropbox.com", icon: "fa-brands fa-dropbox", title: "Dropbox" },
+                { href: "https://drive.google.com", icon: "fa-brands fa-google-drive", title: "Google Drive" },
+                { href: "https://onedrive.live.com", icon: "fa-brands fa-microsoft", title: "OneDrive" },
+                { href: "https://www.box.com/zh-cn/", icon: "fa-solid fa-box-archive", title: "Box" },
+                { href: "https://www.mediafire.com", icon: "fa-solid fa-fire", title: "MediaFire" },
+                { href: "https://mega.nz", icon: "fa-solid fa-cloud-arrow-up", title: "MEGA" },
+                { href: "https://mypikpak.com/", icon: "fa-solid fa-bolt-lightning", title: "PikPak" }
+            ],
+            "email": [
+                { href: "https://mail.google.com", icon: "fa-solid fa-envelope", title: "Gmail" },
+                { href: "https://outlook.live.com", icon: "fa-brands fa-windows", title: "Outlook" },
+                { href: "https://mail.cock.li/login/", icon: "fa-solid fa-envelope-open", title: "cock.li 邮箱" },
+                { href: "https://disroot.org/zh/services/email", icon: "fa-solid fa-seedling", title: "Disroot 邮箱" },
+                { href: "https://proton.me/mail", icon: "fa-solid fa-user-shield", title: "Proton Mail" },
+                { href: "https://mail.qq.com", icon: "fa-brands fa-qq", title: "QQ邮箱" },
+                { href: "https://librem.one/", icon: "fa-solid fa-lock", title: "Librem One Mail" },
+                { href: "https://www.linshigmail.com/", icon: "fa-solid fa-hourglass-half", title: "临时 Gmail" }
+            ]
         };
 
         const linksContainer = document.getElementById("links");
 
         for (const category in linksData) {
-          const categoryTitle = document.createElement("h2");
-          categoryTitle.className = "category-title";
-          categoryTitle.id = category;
-          categoryTitle.textContent = document.querySelector(
-            `nav a[href="#${category}"]`
-          ).textContent;
+            const categoryTitle = document.createElement("h2");
+            categoryTitle.className = "category-title";
+            categoryTitle.id = category;
+            categoryTitle.textContent = document.querySelector(`nav a[href="#${category}"]`).textContent;
 
-          const gridSection = document.createElement("section");
-          gridSection.className = "link-grid";
+            const gridSection = document.createElement("section");
+            gridSection.className = "link-grid";
 
-          linksData[category].forEach((link) => {
-            const linkCard = document.createElement("div");
-            linkCard.className = "link-card";
+            linksData[category].forEach(link => {
+                const linkCard = document.createElement("div");
+                linkCard.className = "link-card";
 
-            const linkAnchor = document.createElement("a");
-            linkAnchor.href = link.href;
-            linkAnchor.target = "_blank";
-            linkAnchor.rel = "noopener noreferrer";
+                const linkAnchor = document.createElement("a");
+                linkAnchor.href = link.href;
+                linkAnchor.target = "_blank";
+                linkAnchor.rel = "noopener noreferrer";
 
-            const icon = document.createElement("i");
-            icon.className = link.icon;
+                const icon = document.createElement("i");
+                icon.className = link.icon;
 
-            const title = document.createElement("h3");
-            title.textContent = link.title;
+                const title = document.createElement("h3");
+                title.textContent = link.title;
 
-            linkCard.appendChild(linkAnchor);
-            linkCard.appendChild(icon);
-            linkCard.appendChild(title);
-            gridSection.appendChild(linkCard);
-          });
+                linkCard.appendChild(linkAnchor);
+                linkCard.appendChild(icon);
+                linkCard.appendChild(title);
+                gridSection.appendChild(linkCard);
+            });
 
-          linksContainer.appendChild(categoryTitle);
-          linksContainer.appendChild(gridSection);
+            linksContainer.appendChild(categoryTitle);
+            linksContainer.appendChild(gridSection);
         }
-        document.querySelector("main").remove();
-      });
+       } catch (error) {
+            console.error("Error in links data processing:", error);
+        }
+        document.querySelector("main").remove()
+    });
     </script>
     <footer>
       <p>© 2024 186404.xyz. 保留所有权利。</p>
