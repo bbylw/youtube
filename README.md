@@ -1,5 +1,5 @@
 # AI-Generated YouTube Navigation Page
-![7ac25d18cd30a80f543f2.png](https://img.186404.xyz/file/7ac25d18cd30a80f543f2.png)
+![demo]demo.png)
 
 This is a fully AI-generated navigation page mimicking YouTube, created using pure HTML for a static webpage. It can be easily deployed on GitHub Pages or via GitHub to Cloudflare Pages. Free permanent domain binding can be done through [dynv6](https://dynv6.com/).
 
